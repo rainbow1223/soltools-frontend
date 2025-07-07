@@ -71,7 +71,7 @@ const onHandleStartBot = async () => {
     });
     
     setStatusMessage("Starting volume bot...");
-    const response = await axios.post("http://170.130.165.249:3001/volumebot", payload);
+    const response = await axios.post("http://45.61.169.114:3001/volumebot", payload);
     
     console.log("Start bot response:", response.data);
 
@@ -98,7 +98,7 @@ const onHandleStopBot = async () => {
   try {
     console.log("Sending stop request");
     setStatusMessage("Stopping volume bot...");
-    const response = await axios.post("http://170.130.165.249:3001/volumebot", {
+    const response = await axios.post("http://45.61.169.114:3001/volumebot", {
       action: "stop",
     });
     
@@ -125,44 +125,7 @@ const onHandleStopBot = async () => {
       <h2 className="text-2xl font-bold mb-4">Market Maker</h2>
 
       {/* Plan Selection */}
-      <div className="mb-4">
-        <label className="block font-medium mb-2">Select Plan:</label>
-        <div className="flex gap-4">
-          <label className="flex items-center">
-            <input
-              type="radio"
-              name="plan"
-              value="plan1"
-              checked={selectedPlan === "plan1"}
-              onChange={(e) => setSelectedPlan(e.target.value)}
-              className="mr-2"
-            />
-            Plan 1 (Buy and Sell)
-          </label>
-          <label className="flex items-center">
-            <input
-              type="radio"
-              name="plan"
-              value="plan2"
-              checked={selectedPlan === "plan2"}
-              onChange={(e) => setSelectedPlan(e.target.value)}
-              className="mr-2"
-            />
-            Plan 2 (Buy, Buy, Sell)
-          </label>
-          <label className="flex items-center">
-            <input
-              type="radio"
-              name="plan"
-              value="plan3"
-              checked={selectedPlan === "plan3"}
-              onChange={(e) => setSelectedPlan(e.target.value)}
-              className="mr-2"
-            />
-            Plan 3 (Only Buy)
-          </label>
-        </div>
-      </div>
+      
 
       {/* Other Inputs */}
       <div className="mb-4">
